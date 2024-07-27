@@ -25,7 +25,7 @@ $controller = new ClientController($model);
     <br><br><br><br><br>
     <div class="container">
         <a href="javascript:history.go(-1)">RETOUR</a>
-        <h3>IMPRIMER LISTE DES CLIENTS PDF/CSV</h3><br>
+        <h3>IMPRIMER LISTE DES CLIENTS PDF/CSV / IMPRIMER</h3><br>
 
         <?php
         $clients = $controller->GetAllClients();
@@ -50,11 +50,15 @@ $controller = new ClientController($model);
         }
         ?>
         <form action="../../fpdf/telecharger.php" method="post">
-            <button type="submit">Telecharger en pdf</button>
+            <button type="submit">
+                <i class="fas fa-file-pdf"></i> Télécharger en PDF
+            </button>
         </form>
         <br>
         <form action="telecharger_csv.php" method="post">
-            <button type="submit">Telecharger en CSV</button>
+            <button type="submit">
+                <i class="fas fa-file-csv"></i> Télécharger en CSV
+            </button>
         </form>
     </div>
     <br>

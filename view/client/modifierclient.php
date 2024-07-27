@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../../public/css/footers.css">
     <link rel="stylesheet" href="../../public/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>ADMIN | MODIFIER CLIENT</title>
+    <title>Acceuil | ADMINISTRATEURS | MODIFIER CLIENT</title>
 </head>
 <body>
     <?php include '../../view/header.php'; ?>

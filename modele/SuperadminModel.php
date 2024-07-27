@@ -6,6 +6,7 @@ class SuperAdminModel {
         $this->db = $db;
     }
 
+    //recuperer nombre d'admin
     public function getNumberOfAdmins() {
         $stmt = $this->db->prepare("SELECT COUNT(*) AS nombre_admins FROM administrateur");
         $stmt->execute();
@@ -13,6 +14,7 @@ class SuperAdminModel {
         return $result['nombre_admins'];
     }
 
+    //recuperer nombre client
     public function getNumberOfClients() {
         $stmt = $this->db->prepare("SELECT COUNT(*) AS nombre_clients FROM clients");
         $stmt->execute();
@@ -30,14 +32,15 @@ class SuperAdminModel {
     }
 
     public function getAllAdmins() {
-        $query = "SELECT id, prenom, nom, login_admin AS email FROM administrateur"; // Utilisation de login_admin comme email
+        $query = "SELECT id, prenom, nom, login_admin, passwd_admin FROM administrateur"; 
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
 
     public function getAllClients() {
-        $query = "SELECT id, prenom, nom, email FROM clients"; // Suppose que 'email' est la colonne correcte pour les clients
+        $query = "SELECT id, prenom, nom, email FROM clients"; 
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -57,7 +60,7 @@ class SuperAdminModel {
     
             $stmt->execute();
     
-            return $this->db->lastInsertId(); // Retourne l'ID du nouvel administrateur inséré si nécessaire
+            return $this->db->lastInsertId();
         } catch (PDOException $e) {
             throw new Exception("Erreur lors de l'ajout de l'administrateur : " . $e->getMessage());
         }
@@ -69,5 +72,17 @@ class SuperAdminModel {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function deleteAdmin($id) {
+        try {
+            $query = "DELETE FROM administrateur WHERE id = :id";
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':id', $id);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la suppression de l'administrateur : " . $e->getMessage());
+        }
+    }
+    
 }
 ?>

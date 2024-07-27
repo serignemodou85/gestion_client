@@ -1,168 +1,164 @@
-/* Global Styles */
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
 }
 
-/* Header Styles */
 .logo {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 30px;
-background-color: #7ad28f; /* Vert apaisant */
-color: white;
-border-bottom: 2px solid #59cb74; /* Vert plus foncé */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #7ad28f; 
+    color: white;
+    border-bottom: 2px solid #59cb74; 
 }
 
 .logo1 img {
-height: 80px;
-width: auto;
+    height: 80px;
+    width: auto;
 }
-/* Navigation Menu Styles */
+
 .logo ul {
-display: flex;
-list-style: none;
-padding: 0;
-margin: 0;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .logo .liens {
-display: flex;
-gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .logo .liens li {
-margin: 0;
+    margin: 0;
 }
 
 .logo .liens a {
-color: white;
-text-decoration: none;
-font-size: 1em;
-transition: color 0.3s;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
 }
 
 .logo .liens a:hover {
-color: #cce7ff; /* Bleu clair */
+    color: #cce7ff; 
 }
 
-/* Search Bar Styles */
 .search-bar {
-margin-left: auto;
-margin-right: 20px;
+    margin-left: auto;
+    margin-right: 20px;
 }
 .gr{
-margin-left: 100px;
+    margin-left: 100px;
 }
 .search-bar input {
-padding: 8px 12px;
-border: none;
-border-radius: 4px;
-font-size: 1em;
-outline: none;
-border: 1px solid #ced4da;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid #ced4da;
 }
 
-/* Profile and Logout Button Styles */
 .profils {
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .disconnect {
-background-color: #dc3545; /* Rouge doux */
-color: white;
-border: none;
-border-radius: 4px;
-padding: 8px 16px;
-cursor: pointer;
-transition: background-color 0.3s;
+    background-color: #dc3545; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .disconnect:hover {
-background-color: #c82333; /* Rouge un peu plus foncé */
+    background-color: #c82333; 
 }
 
 .entete {
-display: flex;
-justify-content: space-between; /* Espacement égal entre les éléments */
-align-items: center; /* Aligne verticalement les éléments au centre */
-padding: 10px; /* Ajoute un peu de padding autour de l'entête */
-background-color: #f8f8f8; /* Couleur de fond de l'entête */
-border-bottom: 1px solid #ddd; /* Ajoute une bordure en bas de l'entête */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    background-color: #f8f8f8; 
+    border-bottom: 1px solid #ddd; 
 }
 
 .entete .localite,
 .entete .contact,
 .entete .mail,
 .entete .heure {
-margin-right: 20px; /* Espacement entre les éléments */
-font-size: 16px; /* Taille de police des textes */
+    margin-right: 20px; 
+    font-size: 16px; 
 }
 
 .entete .localite i,
 .entete .contact i,
 .entete .mail i,
 .entete .heure i {
-color: #007bff; /* Couleur des icônes */
+    color: #007bff; 
 }
 
 .entete .localite span,
 .entete .contact span,
 .entete .mail span,
 .entete .heure span {
-display: flex;
-align-items: center; /* Assure que l'icône et le texte sont alignés verticalement */
+    display: flex;
+    align-items: center; 
 }
 .profil {
-display: flex;
-align-items: center; /* Centre verticalement le contenu */
-justify-content: center; /* Centre horizontalement le contenu */
-margin-right: 20px; /* Espacement à droite */
-height: 100%; /* Hauteur de 100% pour remplir verticalement le conteneur parent */
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin-right: 20px; 
+    height: 100%; 
 }
 
 .profil a {
-text-decoration: none; /* Supprime les soulignements des liens */
-color: white; /* Utilise la couleur du texte par défaut */
+    text-decoration: none; 
+    color: white;
 }
 
 .profil a:hover {
-color: #007bff; /* Couleur du lien lorsqu'il est survolé */
+    color: #007bff; 
 }
 
 .profil i {
-color: white; /* Couleur de l'icône */
-font-size: 2.5rem; /* Taille de l'icône */
-margin-right: 20px;
+    color: white; 
+    font-size: 2.5rem; 
+    margin-right: 20px;
 }
 .profil p span.role {
-font-weight: bold;
-font-style: italic;
-color: #007bff; /* Couleur bleue */
-text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+    color: #007bff;
+    text-transform: uppercase;
 }
 select {
-width: 10px; /* Largeur personnalisée */
-padding: 5px; /* Ajouter un peu de padding pour l'apparence */
-font-size: 14px;
-margin-left: 10px; /* Taille de police personnalisée */
+    width: 10px; 
+    padding: 5px;
+    font-size: 14px;
+    margin-left: 10px; 
 }
 
-/* Style pour réduire la largeur des options */
 option {
-width: 120px; /* Largeur personnalisée */
+    width: 120px; 
 }
+
 .user-info p {
-margin: 0;
+    margin: 0;
 }
 
 .user-role {
-font-weight: bold;
-text-transform: capitalize;
-font-style: italic;
-color: blue;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-style: italic;
+    color: blue;
 }

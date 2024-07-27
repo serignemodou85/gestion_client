@@ -8,15 +8,30 @@ class ClientModel {
 
     //requete pour cree un client
     public function AjouterClient($data) {
-        $query = $this->db->prepare("INSERT INTO clients (prenom, nom, adresse, numero, email, sexe) VALUES (:prenom, :nom, :adresse, :numero, :email, :sexe)");
-        return $query->execute([
-            ":prenom" => $data['prenom'],
-            ":nom" => $data['nom'],
-            ":adresse" => $data['adresse'],
-            ":numero" => $data['numero'],
-            ":email" => $data['email'],
-            ":sexe" => $data['sexe'],
+
+        // Verifiez si un client avec les memes informations existe deja
+        $check_query = "SELECT * FROM clients WHERE email = :email";
+        $stmt = $this->db->prepare($check_query);
+        $stmt->execute([
+            ':email' => $data['email']
         ]);
+
+        // Si le client existe deja, afficher un message d'erreur
+        if ($stmt->rowCount() > 0) {
+            echo "<div class='unique'>Le client existe déjà avec ces informations. Veuillez vérifier les détails fournis.</div>";
+            return false;
+        }
+        else {
+            $query = $this->db->prepare("INSERT INTO clients (prenom, nom, adresse, numero, email, sexe) VALUES (:prenom, :nom, :adresse, :numero, :email, :sexe)");
+            return $query->execute([
+                ":prenom" => $data['prenom'],
+                ":nom" => $data['nom'],
+                ":adresse" => $data['adresse'],
+                ":numero" => $data['numero'],
+                ":email" => $data['email'],
+                ":sexe" => $data['sexe'],
+            ]);
+        }
     }
     
     //requete pour recuperer tous les clients
@@ -33,14 +48,14 @@ class ClientModel {
         return $query->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Correct method to get admin details
+    // Recuperer les admin avec leur id
     public function GetAdminById($id) {
         $query = $this->db->prepare("SELECT * FROM administrateur WHERE id = :id");
         $query->execute([":id" => $id]);
         return $query->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Correct method to update admin password
+    // requete modifier Admin
     public function ModifierAdmin($id, $data) {
         $query = $this->db->prepare("UPDATE administrateur SET passwd_admin = :passwd_admin WHERE id = :id");
         return $query->execute([
@@ -48,7 +63,6 @@ class ClientModel {
             ":passwd_admin" => $data['passwd_admin'],
         ]);
     }
-
 
     //requete pour modifier un client 
     public function ModifierClient($id, $data) {
@@ -72,7 +86,7 @@ class ClientModel {
     
     //requete pour filtrer les clients par nom, adresse et numero
     public function FiltrerClients($query = '') {
-        $query = '%' . $query . '%';  // Encapsule la requête dans des jokers pour la recherche partielle
+        $query = '%' . $query . '%'; 
         $stmt = $this->db->prepare("
             SELECT * FROM clients
             WHERE 
@@ -88,7 +102,6 @@ class ClientModel {
 
     //requete pour trier les clients par nom adresse, nmerero et statut
     public function TrierClients($criteres = 'nom', $ordre = 'ASC') {
-        // Validation des critères et de l'ordre pour éviter les injections SQL
         $criteres = in_array($criteres, ['nom', 'adresse', 'numero']) ? $criteres : 'nom';
         $ordre = strtoupper($ordre) === 'DESC' ? 'DESC' : 'ASC';
     
@@ -99,9 +112,7 @@ class ClientModel {
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    //requete pour imprimer une liste de clients par PDF ou CSV 
-    //requete pour cree un rapport pour les clients 
+ 
 
     //bloquer ou debloquer client
     public function bloquerdebloquerclient($clientId, $status) {
@@ -111,5 +122,17 @@ class ClientModel {
         $stmt->bindParam(':id', $clientId);
         return $stmt->execute();
     }
+    public function deleteclient($id) {
+        try {
+            $query = "DELETE FROM clients WHERE id = :id";
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':id', $id);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la suppression du client : " . $e->getMessage());
+        }
     }
+    }
+
+    
 ?> 

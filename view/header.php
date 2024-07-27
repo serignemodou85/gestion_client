@@ -36,15 +36,21 @@ $userInfo = getUserInfo($login);
     </div>
     <div class="logo">
         <div class="logo1">
-            <img src="../public/image/logo.png" alt="">
+            <img src="../../public/image/logo.png" alt="">
         </div>
         <ul>
             <div class="liens">
                 <li><a href="#">Menu</a></li>
                 <li><a href="../admin/parametre.php">Paramètres</a></li>
-                <li><a href="../profils.php">Profil</a></li>
-                <li><a href="../view/contact.php">Contact</a></li>
-                <li><a href="../../index.php" onclick="return(confirm('Vous vous déconnectez ?'));"><button type="submit"  class="disconnect">Déconnexion</button></a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Contact</a></li>
+                <li>
+                    <a href="../../index.php" onclick="return(confirm('Vous vous déconnectez ?'));">
+                        <button type="submit"  class="disconnect">
+                            <i class="fas fa-sign-out-alt"></i> Déconnexion
+                        </button>
+                    </a>
+                </li>
             </div>
         </ul>
         <div class="gr">
@@ -53,7 +59,9 @@ $userInfo = getUserInfo($login);
             </div>
         </div>
         <div class="profil">
-            <a href="#"><i class="fas fa-user-circle fa-3x"></i></a>
+            <a href="#">
+                <i class="fas fa-user-circle fa-3x"></i>
+            </a>
             <br>
             <div class="user-info">
                 <?php if (isset($userInfo['error'])): ?>

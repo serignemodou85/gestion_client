@@ -1,11 +1,9 @@
-/* Réinitialisation des marges et des bordures */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styles de base du footer */
 .footer {
     background-color: #2d2d2d;
     color: #fff;
@@ -15,7 +13,6 @@
     overflow: hidden;
 }
 
-/* Contenu du footer */
 .footer-content {
     display: flex;
     justify-content: space-around;
@@ -23,7 +20,6 @@
     margin-bottom: 20px;
 }
 
-/* Sections du footer */
 .footer-section {
     flex: 1;
     margin: 10px;
@@ -31,14 +27,12 @@
     position: relative;
 }
 
-/* Animation d'apparition du titre */
 .footer-section h2 {
     font-size: 1.8rem;
     margin-bottom: 15px;
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Animation de glissement pour le texte */
 .footer-section p,
 .footer-section ul {
     font-size: 1rem;
@@ -46,7 +40,6 @@
     animation: slideIn 1.5s ease-in-out;
 }
 
-/* Style des contacts */
 .footer-section .contact span {
     display: block;
     margin-bottom: 10px;
@@ -77,7 +70,6 @@
     color: #ffdd57;
 }
 
-/* Style des icônes sociales */
 .footer-section .social-links a {
     color: #fff;
     font-size: 1.5rem;
@@ -90,7 +82,6 @@
     transform: scale(1.2);
 }
 
-/* Animation de fondu */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -100,7 +91,6 @@
     }
 }
 
-/* Animation de glissement */
 @keyframes slideIn {
     from {
         transform: translateY(20px);
@@ -112,7 +102,6 @@
     }
 }
 
-/* Style du bas du footer */
 .footer-bottom {
     border-top: 1px solid #444;
     padding-top: 10px;
@@ -121,7 +110,6 @@
     position: relative;
 }
 
-/* Animation des étoiles */
 .stars {
     margin-bottom: 10px;
 }

@@ -166,7 +166,6 @@ body {
     margin-left: -990px;
 }
 
-/* Style pour le formulaire */
 form {
   display: flex;
   flex-direction: column;
@@ -179,7 +178,6 @@ form {
   margin-left: 50px;
 }
 
-/* Style pour le titre */
 form h3 {
   margin-bottom: 20px;
   font-size: 24px;
@@ -190,7 +188,6 @@ form h3 {
   font-style: italic;
 }
 
-/* Style pour les champs de saisie */
 form .input-container {
   position: relative;
   margin-bottom: 20px;
@@ -206,12 +203,10 @@ form select {
   font-size: 16px;
 }
 
-/* Style pour le placeholder */
 form input::placeholder {
   color: #999;
 }
 
-/* Style pour les messages d'indication */
 .required-message {
   position: absolute;
   right: 10px;
@@ -221,7 +216,6 @@ form input::placeholder {
   display: inline;
 }
 
-/* Style pour le champ de saisie lors du focus */
 form input[type="text"]:focus,
 form input[type="email"]:focus,
 form select:focus {
@@ -230,7 +224,6 @@ form select:focus {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Style pour le bouton de soumission */
 form button {
   padding: 10px;
   border: none;
@@ -244,8 +237,6 @@ form button {
 form button:hover {
   background-color: #0056b3;
 }
-
-
 
 .img_ajout img{
   height: 190px;

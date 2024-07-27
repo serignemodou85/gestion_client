@@ -1,11 +1,9 @@
-/* Réinitialisation des marges et des bordures */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styles de base du footer */
 .footer {
     background-color: #2d2d2d;
     color: #fff;
@@ -15,7 +13,6 @@
     overflow: hidden;
 }
 
-/* Contenu du footer */
 .footer-content {
     display: flex;
     justify-content: space-around;
@@ -23,7 +20,6 @@
     margin-bottom: 20px;
 }
 
-/* Sections du footer */
 .footer-section {
     flex: 1;
     margin: 10px;
@@ -83,7 +79,6 @@
     color: #ffdd57;
 }
 
-/* Animation de fondu */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -93,7 +88,6 @@
     }
 }
 
-/* Animation de glissement */
 @keyframes slideIn {
     from {
         transform: translateY(20px);
@@ -105,7 +99,6 @@
     }
 }
 
-/* Styles pour le bas du footer */
 .footer-bottom {
     border-top: 1px solid #444;
     padding-top: 10px;

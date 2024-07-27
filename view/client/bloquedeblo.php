@@ -37,14 +37,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin-left: 130px;
             margin-top: 10px;
         }
+        .button-group button {
+            display: flex;
+            align-items: center;
+            margin: 0 5px; /* Espacement entre les boutons */
+        }
+        .button-group i {
+            margin-right: 5px; /* Espacement entre l'icône et le texte */
+        }
     </style>
 </head>
 <body>
     <?php include '../../view/header.php'; ?>
-    <br><br><br><br><br>
+    <br><br><br>
     <div class="container">
         <a href="javascript:history.go(-1)">RETOUR</a>
-        <h3>BLOQUER/DEBLOQUER CLIENT</h3>
+        <h3>BLOQUER/DEBLOQUER CLIENT</h3><br>
 
         <?php
         $clients = $controller->GetAllClients();
@@ -66,12 +74,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo '<form method="post" action="../client/bloquedeblo.php" style="display:inline-block;">';
                 echo '<input type="hidden" name="client_id" value="' . $client['id'] . '">';
                 echo '<input type="hidden" name="new_status" value="inactif">';
-                echo '<button type="submit">Bloquer</button>';
+                echo '<button type="submit"><i class="fas fa-lock"></i> Bloquer</button>';
                 echo '</form>';
                 echo '<form method="post" action="../client/bloquedeblo.php" style="display:inline-block;">';
                 echo '<input type="hidden" name="client_id" value="' . $client['id'] . '">';
                 echo '<input type="hidden" name="new_status" value="actif">';
-                echo '<button type="submit">Débloquer</button>';
+                echo '<button type="submit"><i class="fas fa-unlock"></i> Débloquer</button>';
                 echo '</form>';
                 echo '</div>';
                 echo '</td>';

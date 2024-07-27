@@ -1,26 +1,34 @@
 <?php
-    require_once("../../config/connexion.php");
-    require_once("../../modele/ClientModel.php");
-    require_once("../../controller/ClientController.php");
+require_once("../../config/connexion.php");
+require_once("../../modele/ClientModel.php");
+require_once("../../controller/ClientController.php");
 
-    $database = new Database();
-    $db = $database->getConnection();
+$database = new Database();
+$db = $database->getConnection();
 
-    $model = new ClientModel($db);
+$model = new ClientModel($db);
 
-    $controller = new ClientController($model);
+$controller = new ClientController($model);
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $data = [
-            'nom' => $_POST['nom'],
-            'prenom' => $_POST['prenom'],
-            'adresse' => $_POST['adresse'],
-            'numero' => $_POST['numero'],
-            'email' => $_POST['email'],
-            'sexe' => $_POST['sexe']
-        ];
-        $controller->AjouterClient($data);
+$error_message = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $data = [
+        'nom' => $_POST['nom'],
+        'prenom' => $_POST['prenom'],
+        'adresse' => $_POST['adresse'],
+        'numero' => $_POST['numero'],
+        'email' => $_POST['email'],
+        'sexe' => $_POST['sexe']
+    ];
+    $result = $controller->AjouterClient($data);
+    if (!$result) {
+        $error_message = "Un client avec ce email existe deja. Veuillez vérifier les détails fournis.";
+    } else {
+        header('Location: ../admin/admin.php');
+        exit;
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,15 +39,10 @@
     <link rel="stylesheet" href="../../public/css/header.css">
     <link rel="stylesheet" href="../../public/css/footers.css">
     <link rel="stylesheet" href="../../public/css/admin.css">
+    <link rel="stylesheet" href="../../public/css/creeclient.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Acceuil | ADMINISTRATEURS | AJOUT CLIENT</title>
-    <style>
-        #clientForm{
-            margin: -30px;
-            margin-left: 60px;
 
-        }
-    </style>
 </head>
 <body>
     <?php include '../../view/header.php'; ?>
@@ -65,6 +68,10 @@
         <a href="javascript:history.go(-1)">RETOUR</a>
         <br><br>
         <form id="clientForm" action="" method="post" enctype="multipart/form-data">
+            <?php if ($error_message): ?>
+                <div class="error-message"><?php echo $error_message; ?></div>
+            <?php endif; ?>
+            <br>
             <div class="input-container">
                 <input type="text" placeholder="Nom" name="nom" required>
                 <span class="required-message">* Champ obligatoire</span>
@@ -93,11 +100,10 @@
                 </select>
                 <span class="required-message">* Champ obligatoire</span>
             </div>
-            <button type="submit">AJOUTER CLIENT</button>
+            <button type="submit">
+                <i class="fas fa-plus"></i> AJOUTER CLIENT
+            </button>
         </form>
-        <div class="img_ajout">
-            <img src="../../public/image/admin.jpg" alt="">
-        </div>
     </div>
     <br>
     <br><br><br><br><br><br>

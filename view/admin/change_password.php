@@ -8,7 +8,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $login = isset($_SESSION['login']) ? $_SESSION['login'] : '';
 
-// Récupérer les informations de l'utilisateur
 $userInfo = getUserInfo($login);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

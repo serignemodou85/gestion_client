@@ -11,9 +11,9 @@ body {
     justify-content: center;
     background: rgb(237, 245, 247);
     height: 100vh;
-    background-image: url('../image/bc.jpg'); /* Ajoutez l'URL de votre image ici */
-    background-size: cover; /* Pour couvrir tout l'écran */
-    background-position: center; /* Pour centrer l'image */
+    background-image: url('../image/bc.jpg'); 
+    background-size: cover; 
+    background-position: center; 
 }
 
 .container {
@@ -82,42 +82,38 @@ input[type="submit"] {
     color: red;
 }
 
-/* Style pour le titre h2 */
 .content-right h2 {
-    font-size: 24px; /* Taille de police */
-    color: #333; /* Couleur du texte */
-    margin-bottom: 10px; /* Espacement en bas */
+    font-size: 24px; 
+    color: #333; 
+    margin-bottom: 10px; 
 }
 
-/* Style pour le paragraphe p */
 .content-right p {
-    font-size: 16px; /* Taille de police */
-    color: #666; /* Couleur du texte */
-    line-height: 1.5; /* Hauteur de ligne */
-    margin: 0; /* Marges */
+    font-size: 16px; 
+    color: #666; 
+    line-height: 1.5; 
+    margin: 0; 
 }
 
- /* Style pour le titre h2 */
  .content-right h2 {
-    font-size: 24px; /* Taille de police */
-    color: #333; /* Couleur du texte */
-    margin-bottom: 10px; /* Espacement en bas */
+    font-size: 24px; 
+    color: #333; 
+    margin-bottom: 10px; 
 }
 
-/* Style pour le paragraphe p */
 .content-right p {
-    font-size: 16px; /* Taille de police */
-    color: #666; /* Couleur du texte */
-    line-height: 1.5; /* Hauteur de ligne */
-    margin: 0; /* Marges */
+    font-size: 16px; 
+    color: #666; 
+    line-height: 1.5; 
+    margin: 0; 
 }
 .icon-list {
-            display: flex;
-            gap: 15px; /* Espacement entre les icônes */
-            margin-top: 20px; /* Espacement au-dessus des icônes */
-        }
+    display: flex;
+    gap: 15px; 
+    margin-top: 20px; 
+}
 
-        .icon-list i {
-            font-size: 24px; /* Taille des icônes */
-            color: #007bff; /* Couleur des icônes */
-        }
+.icon-list i {
+    font-size: 24px; 
+    color: #007bff; 
+}

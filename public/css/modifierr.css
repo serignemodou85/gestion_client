@@ -41,7 +41,6 @@ tbody tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Boutons */
 button {
     padding: 10px 15px;
     border: none;
@@ -69,7 +68,6 @@ button[type="button"]:hover {
     background-color: #45a049;
 }
 
-/* Liens */
 a {
     color: #4CAF50;
     text-decoration: none;
@@ -79,7 +77,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Champs de formulaire */
 .input-container {
     margin-bottom: 15px;
 }
@@ -103,24 +100,22 @@ a:hover {
 input:invalid + .required-message {
     display: inline;
 }
- /* Style pour le conteneur des boutons */
- .button-group {
-    display: flex; /* Utilise flexbox pour aligner les boutons horizontalement */
-    gap: 10px; /* Espacement entre les boutons */
+.button-group {
+    display: flex; 
+    gap: 10px; 
 }
 
-/* Style pour les boutons */
 .supp, .modif {
-    background-color: #007bff; /* Couleur de fond pour les boutons */
-    color: #fff; /* Couleur du texte */
-    border: none; /* Supprime les bordures par défaut */
-    padding: 8px 16px; /* Espacement intérieur des boutons */
-    border-radius: 4px; /* Bords arrondis des boutons */
-    cursor: pointer; /* Change le curseur au survol */
-    font-size: 14px; /* Taille de la police des boutons */
-    transition: background-color 0.3s; /* Transition pour un effet de survol fluide */
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 14px; 
+    transition: background-color 0.3s; 
 }
 
 .supp:hover, .modif:hover {
-    background-color: #0056b3; /* Couleur de fond au survol */
+    background-color: #0056b3; 
 }

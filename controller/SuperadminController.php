@@ -32,5 +32,9 @@ class SuperAdminController {
     public function getActivityLogs() {
         return $this->model->fetchActivityLogs();
     }
+
+    public function deleteAdmin($id) {
+        return $this->model->deleteAdmin($id);
+    }
 }
 ?>
